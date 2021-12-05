@@ -1,10 +1,29 @@
 import React from 'react';
 
 class EqInput extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleEqChange = this.handleEqChange.bind(this);
+    }
+
+    handleEqChange(e) {
+        const filter = /[^0-9x+*^/-]/g;
+
+        this.props.handleEqChange(e.target.value.replace(filter, ''));
+    }
+
     render() {
         return (
             <form>
-                <input type="text"></input>
+                <label>
+                    Enter an equation:&ensp;f(x)=
+                    <input
+                        type="text"
+                        value={this.props.eqText}
+                        onChange={this.handleEqChange}
+                    />
+                </label>
             </form>
         );
     }
