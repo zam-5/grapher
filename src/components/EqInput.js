@@ -8,7 +8,7 @@ class EqInput extends React.Component {
     }
 
     handleEqChange(e) {
-        const filter = /[^0-9x+*^/().-]/g;
+        const filter = /[^0-9a-x+*^/().-]/g;
 
         this.props.handleEqChange(e.target.value.replace(filter, ''));
     }
