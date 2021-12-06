@@ -37,7 +37,11 @@ export function testEqString(expr) {
             },
         });
 
-        parser.parse(expr);
+        let parsedExpr = parser.parse(expr);
+        let calcedVal = parsedExpr.evaluate({ x: 1 });
+        if (typeof calcedVal !== 'number') {
+            throw new Error();
+        }
         return true;
     } catch (e) {
         return false;
