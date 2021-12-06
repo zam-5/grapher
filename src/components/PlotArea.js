@@ -4,7 +4,7 @@ import { VictoryChart, VictoryLine } from 'victory';
 class PlotArea extends React.Component {
     render() {
         return (
-            <VictoryChart>
+            <VictoryChart domain={this.props.domain}>
                 <VictoryLine
                     style={{
                         data: { stroke: '#c43a31' },

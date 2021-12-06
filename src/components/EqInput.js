@@ -1,12 +1,5 @@
 import React from 'react';
 
-class AxisSelector extends React.Component {
-    render() {
-        const name = this.props.name;
-        return <input type="number" name={name} />;
-    }
-}
-
 class EqInput extends React.Component {
     constructor(props) {
         super(props);
@@ -22,36 +15,16 @@ class EqInput extends React.Component {
 
     render() {
         return (
-            <form className="eqForm">
-                <div className="eqInput">
-                    <label>
-                        Enter an equation:&ensp;f(x)=
-                        <input
-                            type="text"
-                            value={this.props.eqText}
-                            onChange={this.handleEqChange}
-                        />
-                    </label>
-                </div>
-                <div className="axisInput">
-                    <label>
-                        x-min:&ensp;
-                        <input type="number" />
-                    </label>
-                    <label>
-                        &ensp;x-max:&ensp;
-                        <input type="number" />
-                    </label>
-                    <label>
-                        &ensp;y-min:&ensp;
-                        <input type="number" />
-                    </label>
-                    <label>
-                        &ensp;y-max:&ensp;
-                        <input type="number" />
-                    </label>
-                </div>
-            </form>
+            <div className="eqBox">
+                <label>
+                    Enter an equation:&ensp;f(x)=
+                    <input
+                        type="text"
+                        value={this.props.eqText}
+                        onChange={this.handleEqChange}
+                    />
+                </label>
+            </div>
         );
     }
 }
