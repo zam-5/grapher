@@ -29,9 +29,11 @@
     margin: 8px auto 8px;
 }
 .invalidInput {
-    border: 1px solid red;
+    background-color: lightcoral;
 }
-
+.validInput {
+    background-color: lightgreen;
+}
 .axisInput {
     margin: auto;
     padding: 0px 4px 0px 4px;

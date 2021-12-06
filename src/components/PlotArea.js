@@ -1,6 +1,6 @@
 import React from 'react';
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
-import stringToDataPoints from '../util';
+import { stringToDataPoints } from '../util';
 
 export default function PlotArea(props) {
     let data = [];
