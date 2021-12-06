@@ -1,8 +1,19 @@
 import React from 'react';
 import { VictoryChart, VictoryLine } from 'victory';
+import stringToDataPoints from '../util';
 
 class PlotArea extends React.Component {
     render() {
+        let data = [];
+        try {
+            data = stringToDataPoints(
+                this.props.eq,
+                this.props.xMin,
+                this.props.xMax
+            );
+        } catch (err) {
+            data = [{ x: 0, y: 0 }];
+        }
         return (
             <VictoryChart domain={this.props.domain}>
                 <VictoryLine
@@ -10,13 +21,7 @@ class PlotArea extends React.Component {
                         data: { stroke: '#c43a31' },
                         parent: { border: '1px solid #ccc' },
                     }}
-                    data={[
-                        { x: 1, y: 2 },
-                        { x: 2, y: 3 },
-                        { x: 3, y: 5 },
-                        { x: 4, y: 4 },
-                        { x: 5, y: 7 },
-                    ]}
+                    data={data}
                 />
             </VictoryChart>
         );
