@@ -18,7 +18,7 @@ class AxisSelector extends React.Component {
         const name = this.props.name;
         const label = `${name[0]}-${name.slice(1).toLowerCase()}: `;
         return (
-            <label htmlFor={name}>
+            <label htmlFor={name} className="axisInput">
                 {label}
                 <input
                     type="number"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { VictoryChart, VictoryLine } from 'victory';
+import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
 import stringToDataPoints from '../util';
 
 class PlotArea extends React.Component {
@@ -15,7 +15,10 @@ class PlotArea extends React.Component {
             data = [{ x: 0, y: 0 }];
         }
         return (
-            <VictoryChart domain={this.props.domain}>
+            <VictoryChart
+                domain={this.props.domain}
+                theme={VictoryTheme.material}
+            >
                 <VictoryLine
                     style={{
                         data: { stroke: '#c43a31' },

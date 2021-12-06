@@ -42,22 +42,27 @@ class App extends React.Component {
             );
         });
         return (
-            <div className="App">
-                <EqInput
-                    eqText={this.state.eqText}
-                    handleEqChange={this.handleEqChange}
-                />
-                {axisList}
-                <div className="PlotArea">
-                    <PlotArea
-                        domain={{
-                            x: [this.state.xMin, this.state.xMax],
-                            y: [this.state.yMin, this.state.yMax],
-                        }}
-                        eqText={this.state.eqText}
-                        xMin={this.state.xMin}
-                        xMax={this.state.xMax}
-                    />
+            <div className="appDiv">
+                <span className="topBar">grapher</span>
+                <div className="appArea">
+                    <div className="controlArea">
+                        <EqInput
+                            eqText={this.state.eqText}
+                            handleEqChange={this.handleEqChange}
+                        />
+                        <div className="axisRow">{axisList}</div>
+                    </div>
+                    <div className="PlotArea">
+                        <PlotArea
+                            domain={{
+                                x: [this.state.xMin, this.state.xMax],
+                                y: [this.state.yMin, this.state.yMax],
+                            }}
+                            eqText={this.state.eqText}
+                            xMin={this.state.xMin}
+                            xMax={this.state.xMax}
+                        />
+                    </div>
                 </div>
             </div>
         );
