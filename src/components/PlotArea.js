@@ -7,7 +7,7 @@ class PlotArea extends React.Component {
         let data = [];
         try {
             data = stringToDataPoints(
-                this.props.eq,
+                this.props.eqText,
                 this.props.xMin,
                 this.props.xMax
             );

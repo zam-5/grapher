@@ -4,7 +4,6 @@ import './App.css';
 import EqInput from './components/EqInput';
 import PlotArea from './components/PlotArea';
 import AxisSelector from './components/AxisSelector';
-// import stringToDataPoints from './util';
 
 class App extends React.Component {
     constructor(props) {
@@ -20,7 +19,6 @@ class App extends React.Component {
 
         this.handleEqChange = this.handleEqChange.bind(this);
         this.handleAxisChange = this.handleAxisChange.bind(this);
-        this.plotEq = this.plotEq.bind(this);
     }
 
     handleEqChange(newEq) {
@@ -30,8 +28,6 @@ class App extends React.Component {
     handleAxisChange(axis, newVal) {
         this.setState({ [axis]: newVal });
     }
-
-    plotEq() {}
 
     render() {
         const axes = ['xMin', 'xMax', 'yMin', 'yMax'];
@@ -58,7 +54,7 @@ class App extends React.Component {
                             x: [this.state.xMin, this.state.xMax],
                             y: [this.state.yMin, this.state.yMax],
                         }}
-                        eq={this.state.eqText}
+                        eqText={this.state.eqText}
                         xMin={this.state.xMin}
                         xMax={this.state.xMax}
                     />

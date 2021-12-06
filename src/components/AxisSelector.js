@@ -10,7 +10,7 @@ class AxisSelector extends React.Component {
         const filter = /[^0-9-]/g;
         this.props.handleAxisChange(
             this.props.name,
-            e.target.value.replace(filter, '')
+            Number(e.target.value.replace(filter, ''))
         );
     }
 
