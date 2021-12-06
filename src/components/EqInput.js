@@ -25,7 +25,7 @@ export default function EqInput(props) {
     return (
         <div className="eqBox">
             <label>
-                Enter an equation:&ensp;f(x)=
+                Enter an equation:&ensp;f(x)=&nbsp;
                 {input}
             </label>
         </div>

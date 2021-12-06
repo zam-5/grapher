@@ -19,6 +19,7 @@ export default function AxisSelector(props) {
                 name={name}
                 id={name}
                 value={props.axisValue}
+                step="1"
                 onChange={handleAxisChange}
             />
         </label>
