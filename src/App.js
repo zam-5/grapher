@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-// import EqInput from './components/EqInput';
 import EqTable from './components/EqTable';
 import PlotArea from './components/PlotArea';
 import AxisSelector from './components/AxisSelector';

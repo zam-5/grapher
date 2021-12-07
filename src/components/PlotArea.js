@@ -3,17 +3,38 @@ import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
 import { stringToDataPoints } from '../util';
 
 export default function PlotArea(props) {
-    let data = [];
-    try {
-        data = stringToDataPoints(props.eqText, props.xMin, props.xMax);
-    } catch (err) {
-        data = [{ x: 0, y: 0 }];
+    let lines = [];
+    for (let eq in props.eqText) {
+        let data = [];
+        try {
+            data = stringToDataPoints(props.eqText[eq], props.xMin, props.xMax);
+        } catch (err) {
+            data = [{ x: 0, y: 0 }];
+        }
+
+        lines.push(
+            <VictoryLine
+                key={props.eqText[eq] + 'line'}
+                style={{
+                    data: { stroke: '#c43a31' },
+                    parent: { border: '1px solid #ccc' },
+                }}
+                data={data}
+            />
+        );
     }
+
+    // let data = [];
+    // try {
+    //     data = stringToDataPoints(props.eqText, props.xMin, props.xMax);
+    // } catch (err) {
+    //     data = [{ x: 0, y: 0 }];
+    // }
 
     //const lines =
     return (
         <VictoryChart domain={props.domain} theme={VictoryTheme.material}>
-            <VictoryLine
+            {/* <VictoryLine
                 style={{
                     data: { stroke: '#c43a31' },
                     parent: { border: '1px solid #ccc' },
@@ -30,7 +51,8 @@ export default function PlotArea(props) {
                     { x: 0, y: 0 },
                     { x: 10, y: 10 },
                 ]}
-            />
+            /> */}
+            {lines}
         </VictoryChart>
     );
 }

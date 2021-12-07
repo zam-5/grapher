@@ -3,44 +3,54 @@ import EqInput from './EqInput';
 import NewEqButton from './NewEqButton';
 
 export default function EqTable(props) {
-    function generateTable() {
-        let eqList = [];
-        for (let eq in props.eqText) {
-            eqList.push(
-                <tr key={eq}>
-                    <td>
-                        <EqInput
-                            eqText={props.eqText[eq]}
-                            handleEqChange={props.handleEqChange}
-                            eqValiity={props.eqValidity[eq]}
-                            id={eq}
-                            key={eq}
-                        />
-                    </td>
-                </tr>
-            );
-        }
+    let eqList = [];
+    for (let eq in props.eqText) {
         eqList.push(
-            <tr key="addButRow">
+            <tr key={eq}>
                 <td>
-                    <NewEqButton addEqRow={props.addEqRow} />
+                    <EqInput
+                        eqText={props.eqText[eq]}
+                        handleEqChange={props.handleEqChange}
+                        className={
+                            props.eqValidity[eq] ? 'validInput' : 'invalidInput'
+                        }
+                        eqValiity={props.eqValidity[eq]}
+                        id={eq}
+                    />
                 </td>
             </tr>
         );
-        return eqList;
     }
-
-    // function addEqRow() {
-    //     console.log('here');
-    //     const eqList = generateTable();
-    //     const newId = 'eq' + eqList.length;
-    //     props.handleEqChange('', newId);
-    // }
+    // eqList.push(
+    //     // <tr key="addButRow">
+    //     //     <td>
+    //     //         <NewEqButton addEqRow={props.addEqRow} />
+    //     //     </td>
+    //     // </tr>
+    //     <button
+    //         type="button"
+    //         id="addButton"
+    //         onClick={(e) => {
+    //             e.preventDefault();
+    //             props.addEqRow();
+    //         }}
+    //         disabled={false}
+    //     >
+    //         +
+    //     </button>
+    // );
 
     return (
         <div>
             <table className="eqTable">
-                <tbody>{generateTable()}</tbody>
+                <tbody>
+                    {eqList}{' '}
+                    <tr key="addButRow">
+                        <td>
+                            <NewEqButton addEqRow={props.addEqRow} />
+                        </td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     );
