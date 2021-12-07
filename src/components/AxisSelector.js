@@ -12,16 +12,18 @@ export default function AxisSelector(props) {
     const name = props.name;
     const label = `${name[0]}-${name.slice(1).toLowerCase()}: `;
     return (
-        <label htmlFor={name} className="axisInput">
-            {label}
-            <input
-                type="number"
-                name={name}
-                id={name}
-                value={props.axisValue}
-                step="1"
-                onChange={handleAxisChange}
-            />
-        </label>
+        <div>
+            <label htmlFor={name} className="axisInput">
+                {label}
+                <input
+                    type="number"
+                    name={name}
+                    id={name}
+                    value={props.axisValue}
+                    step="1"
+                    onChange={handleAxisChange}
+                />
+            </label>
+        </div>
     );
 }

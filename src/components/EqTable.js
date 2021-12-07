@@ -44,7 +44,7 @@ export default function EqTable(props) {
         <div>
             <table className="eqTable">
                 <tbody>
-                    {eqList}{' '}
+                    {eqList}
                     <tr key="addButRow">
                         <td>
                             <NewEqButton addEqRow={props.addEqRow} />

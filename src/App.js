@@ -52,14 +52,15 @@ export default function App(props) {
         <div className="appDiv">
             <span className="topBar">grapher</span>
             <div className="appArea">
-                <div className="controlArea">
+                <div className="sidebar">
                     <EqTable
                         eqText={eqText}
                         handleEqChange={handleEqChange}
                         eqValidity={eqValidity}
                         addEqRow={addEqRow}
                     />
-                    <div className="axisRow">{axisList}</div>
+                    <hr />
+                    {axisList}
                 </div>
                 <div className="PlotArea">
                     <PlotArea

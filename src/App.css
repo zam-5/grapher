@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-content: center;
-    /* height: 100vh; */
 }
 .topBar {
     background-color: darkcyan;
@@ -13,40 +12,53 @@
     border-bottom-right-radius: 4px;
     margin-top: 0px;
     height: 40px;
+    /* width: 100vw; */
     font-size: 30px;
 }
 
 .appArea {
+    display: flex;
+    flex-direction: row;
     text-align: center;
     /* height: 100%; */
 }
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 200px;
+    border-right: 3px solid gray;
+}
 
-.controlArea {
-    height: auto;
+hr {
+    width: 100%;
 }
 
 .eqTable {
-    text-align: center;
     margin-left: auto;
     margin-right: auto;
 }
 
 .eqBox {
-    margin: 8px auto 8px;
+    margin: 8px auto 0px;
 }
 .invalidInput {
+    width: 130px;
     background-color: lightcoral;
 }
 .validInput {
+    width: 130px;
     background-color: lightgreen;
 }
 .axisInput {
-    margin: auto;
-    padding: 0px 4px 0px 4px;
+    /* margin: auto;
+    padding: 0px 4px 0px 4px; */
+    margin-right: auto;
+    margin-left: auto;
 }
 
 input[type='number'] {
-    width: 10%;
+    width: 70px;
 }
 
 .PlotArea {

@@ -9,7 +9,7 @@ export default function EqInput(props) {
 
     return (
         <label className="eqBox">
-            Enter an equation:&ensp;f(x)=&nbsp;
+            f(x)=&nbsp;
             <input
                 type="text"
                 id={props.id + 'Input'}
