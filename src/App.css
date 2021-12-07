@@ -25,6 +25,12 @@
     height: 40px;
 }
 
+.eqTable {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .eqBox {
     margin: 8px auto 8px;
 }

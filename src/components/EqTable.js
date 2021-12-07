@@ -39,7 +39,7 @@ export default function EqTable(props) {
 
     return (
         <div>
-            <table>
+            <table className="eqTable">
                 <tbody>{generateTable()}</tbody>
             </table>
         </div>

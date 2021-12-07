@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 // import EqInput from './components/EqInput';
 import EqTable from './components/EqTable';
-// import NewEqButton from './components/NewEqButton';
 import PlotArea from './components/PlotArea';
 import AxisSelector from './components/AxisSelector';
 import { testEqString } from './util';
@@ -61,12 +60,6 @@ export default function App(props) {
                         eqValidity={eqValidity}
                         addEqRow={addEqRow}
                     />
-                    {/* <NewEqButton addEqRow={addEqRow} /> */}
-                    {/* <EqInput
-                        eqText={eqText}
-                        handleEqChange={handleEqChange}
-                        eqValidity={eqValidity}
-                    /> */}
                     <div className="axisRow">{axisList}</div>
                 </div>
                 <div className="PlotArea">
