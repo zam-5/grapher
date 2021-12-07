@@ -24,9 +24,6 @@ export default function App(props) {
         setAxisValues((prevState) => ({ ...prevState, [axis]: newVal }));
     }
 
-    //Check if the eqText is valid
-    //const eqValidity = testEqString(eqText);
-
     const axes = ['xMin', 'xMax', 'yMin', 'yMax'];
     const axisList = axes.map((axisName) => {
         return (
