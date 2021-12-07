@@ -12,7 +12,7 @@ export default function AxisSelector(props) {
     const name = props.name;
     const label = `${name[0]}-${name.slice(1).toLowerCase()}: `;
     return (
-        <div>
+        <div className="axisInputDiv">
             <label htmlFor={name} className="axisInput">
                 {label}
                 <input

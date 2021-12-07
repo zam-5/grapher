@@ -67,6 +67,7 @@ export default function App(props) {
             <span className="topBar">grapher</span>
             <div className="appArea">
                 <div className="sidebar">
+                    <p>Equations </p>
                     <EqTable
                         eqText={eqText}
                         handleEqChange={handleEqChange}
@@ -75,7 +76,7 @@ export default function App(props) {
                         deleteEqRow={deleteEqRow}
                     />
                     <hr />
-                    {axisList}
+                    <div className="axisControls">{axisList}</div>
                 </div>
                 <div className="PlotArea">
                     <PlotArea

@@ -7,7 +7,7 @@ export default function EqTable(props) {
     let eqList = [];
     for (let eq in props.eqText) {
         eqList.push(
-            <tr key={eq}>
+            <tr key={eq} className="eqRow">
                 <td>
                     <EqInput
                         eqText={props.eqText[eq]}

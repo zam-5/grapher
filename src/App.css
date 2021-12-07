@@ -25,9 +25,15 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 200px;
+    height: auto;
+    width: 220px;
     border-right: 3px solid gray;
+    background-color: lightgray;
+}
+.sidebar p {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 hr {
@@ -39,16 +45,60 @@ hr {
     margin-right: auto;
 }
 
+.eqRow {
+    padding: 4px;
+}
+
+.deleteButton {
+    color: red;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-style: italic;
+    font-size: large;
+}
+
+.deleteButton:hover {
+    border: 1px solid lightcoral;
+    border-radius: 3px;
+}
+
+#addButton {
+    color: black;
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-weight: bold;
+    font-style: italic;
+    font-size: x-large;
+    text-align: center;
+    margin: auto;
+}
+#addButton:hover {
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
 .eqBox {
     margin: 8px auto 0px;
 }
 .invalidInput {
     width: 130px;
     background-color: lightcoral;
+    border: 2px solid red;
+    border-radius: 3px;
 }
 .validInput {
     width: 130px;
     background-color: lightgreen;
+    border: 2px solid green;
+    border-radius: 3px;
+}
+.axisControls {
+    margin-right: auto;
+    margin-left: auto;
+}
+.axisInputDiv {
+    text-align: right;
 }
 .axisInput {
     /* margin: auto;
