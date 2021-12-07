@@ -1,23 +1,38 @@
 import React, { useState } from 'react';
 import './App.css';
-import EqInput from './components/EqInput';
+// import EqInput from './components/EqInput';
+import EqTable from './components/EqTable';
+// import NewEqButton from './components/NewEqButton';
 import PlotArea from './components/PlotArea';
 import AxisSelector from './components/AxisSelector';
 import { testEqString } from './util';
 
 export default function App(props) {
-    const [eqText, setEqText] = useState('');
+    const [eqText, setEqText] = useState({ eq0: '' });
+
     const [axisValues, setAxisValues] = useState({
         xMin: -10,
         xMax: 10,
         yMin: -10,
         yMax: 10,
     });
-    const [eqValidity, setEqValidity] = useState(false);
+    const [eqValidity, setEqValidity] = useState({ eq0: false });
 
-    function handleEqChange(newEq) {
-        setEqText(newEq);
-        setEqValidity(testEqString(newEq));
+    function handleEqChange(newEq, eqName) {
+        setEqText((prevState) => ({ ...prevState, [eqName]: newEq }));
+        setEqValidity((prevState) => ({
+            ...prevState,
+            [eqName]: testEqString(newEq),
+        }));
+    }
+
+    function addEqRow() {
+        let eqCount = 0;
+        for (let eq in eqText) {
+            console.log({ eq });
+            eqCount++;
+        }
+        handleEqChange('', 'eq' + eqCount);
     }
 
     function handleAxisChange(axis, newVal) {
@@ -40,11 +55,18 @@ export default function App(props) {
             <span className="topBar">grapher</span>
             <div className="appArea">
                 <div className="controlArea">
-                    <EqInput
+                    <EqTable
                         eqText={eqText}
                         handleEqChange={handleEqChange}
                         eqValidity={eqValidity}
+                        addEqRow={addEqRow}
                     />
+                    {/* <NewEqButton addEqRow={addEqRow} /> */}
+                    {/* <EqInput
+                        eqText={eqText}
+                        handleEqChange={handleEqChange}
+                        eqValidity={eqValidity}
+                    /> */}
                     <div className="axisRow">{axisList}</div>
                 </div>
                 <div className="PlotArea">

@@ -6,11 +6,11 @@ export default function PlotArea(props) {
     let data = [];
     try {
         data = stringToDataPoints(props.eqText, props.xMin, props.xMax);
-        //props.setEqValidity(true);
     } catch (err) {
         data = [{ x: 0, y: 0 }];
-        //props.setEqValidity(false);
     }
+
+    //const lines =
     return (
         <VictoryChart domain={props.domain} theme={VictoryTheme.material}>
             <VictoryLine
@@ -19,6 +19,17 @@ export default function PlotArea(props) {
                     parent: { border: '1px solid #ccc' },
                 }}
                 data={data}
+            />
+            <VictoryLine
+                domain={props.domain}
+                style={{
+                    data: { stroke: '#31c43d' },
+                    parent: { border: '1px solid #ccc' },
+                }}
+                data={[
+                    { x: 0, y: 0 },
+                    { x: 10, y: 10 },
+                ]}
             />
         </VictoryChart>
     );

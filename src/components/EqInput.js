@@ -4,12 +4,13 @@ export default function EqInput(props) {
     function handleEqChange(e) {
         const filter = /[^0-9a-xEPI+*^/().-]/g;
 
-        props.handleEqChange(e.target.value.replace(filter, ''));
+        props.handleEqChange(e.target.value.replace(filter, ''), props.id);
     }
 
     const input = props.eqValidity ? (
         <input
             type="text"
+            id={props.id + 'Input'}
             value={props.eqText}
             onChange={handleEqChange}
             className="validInput"
@@ -23,11 +24,9 @@ export default function EqInput(props) {
         />
     );
     return (
-        <div className="eqBox">
-            <label>
-                Enter an equation:&ensp;f(x)=&nbsp;
-                {input}
-            </label>
-        </div>
+        <label className="eqBox">
+            Enter an equation:&ensp;f(x)=&nbsp;
+            {input}
+        </label>
     );
 }
