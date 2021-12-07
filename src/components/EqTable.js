@@ -1,6 +1,7 @@
 import React from 'react';
 import EqInput from './EqInput';
 import NewEqButton from './NewEqButton';
+import DelEqButton from './DelEqButton';
 
 export default function EqTable(props) {
     let eqList = [];
@@ -18,27 +19,12 @@ export default function EqTable(props) {
                         id={eq}
                     />
                 </td>
+                <td>
+                    <DelEqButton name={eq} deleteEqRow={props.deleteEqRow} />
+                </td>
             </tr>
         );
     }
-    // eqList.push(
-    //     // <tr key="addButRow">
-    //     //     <td>
-    //     //         <NewEqButton addEqRow={props.addEqRow} />
-    //     //     </td>
-    //     // </tr>
-    //     <button
-    //         type="button"
-    //         id="addButton"
-    //         onClick={(e) => {
-    //             e.preventDefault();
-    //             props.addEqRow();
-    //         }}
-    //         disabled={false}
-    //     >
-    //         +
-    //     </button>
-    // );
 
     return (
         <div>

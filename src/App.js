@@ -33,6 +33,20 @@ export default function App(props) {
         handleEqChange('', 'eq' + eqCount);
     }
 
+    function deleteEqRow(eqName) {
+        console.log('here');
+        setEqText((prevState) => {
+            const state = { ...prevState };
+            delete state[eqName];
+            return state;
+        });
+        setEqValidity((prevState) => {
+            const state = { ...prevState };
+            delete state[eqName];
+            return state;
+        });
+    }
+
     function handleAxisChange(axis, newVal) {
         setAxisValues((prevState) => ({ ...prevState, [axis]: newVal }));
     }
@@ -58,6 +72,7 @@ export default function App(props) {
                         handleEqChange={handleEqChange}
                         eqValidity={eqValidity}
                         addEqRow={addEqRow}
+                        deleteEqRow={deleteEqRow}
                     />
                     <hr />
                     {axisList}
