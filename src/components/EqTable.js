@@ -1,7 +1,7 @@
 import React from 'react';
 import EqInput from './EqInput';
-import NewEqButton from './NewEqButton';
-import DelEqButton from './DelEqButton';
+import NewEqButton from './buttons/NewEqButton';
+import DelEqButton from './buttons/DelEqButton';
 
 export default function EqTable(props) {
     let eqList = [];

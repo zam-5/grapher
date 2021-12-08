@@ -26,14 +26,6 @@ export default function PlotArea(props) {
         );
     }
 
-    // let data = [];
-    // try {
-    //     data = stringToDataPoints(props.eqText, props.xMin, props.xMax);
-    // } catch (err) {
-    //     data = [{ x: 0, y: 0 }];
-    // }
-
-    //const lines =
     return (
         <VictoryChart
             width={width - 210}
