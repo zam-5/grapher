@@ -36,9 +36,9 @@ export default function PlotArea(props) {
     //const lines =
     return (
         <VictoryChart
-            width={width}
-            height={height}
-            padding={{ top: 3, bottom: 3, left: 3, right: 4 }}
+            width={width - 210}
+            height={height - 40}
+            padding={{ top: 10, bottom: 10, left: 10, right: 10 }}
             domain={props.domain}
             theme={VictoryTheme.material}
             typ
