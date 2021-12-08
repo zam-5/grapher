@@ -18,7 +18,7 @@ export function stringToDataPoints(expr, xMin, xMax) {
 
     let dataArray = [];
 
-    for (let xx = xMin; xx < xMax; xx += 0.1) {
+    for (let xx = xMin; xx < xMax; xx += 0.01) {
         dataArray.push({ x: xx, y: parsedExpr.evaluate({ x: xx }) });
     }
     return dataArray;
