@@ -14,11 +14,11 @@ export default function App(props) {
         ' #800080 ',
         '#000000',
     ];
-    const [colorTracker, setColorTracker] = useState(0);
+    const [colorTracker, setColorTracker] = useState(1);
     const [eqText, setEqText] = useState({ eq0: '' });
     const [nextEqId, setNextEqId] = useState(1);
 
-    const [eqColors, setEqColors] = useState({ eq0: colors[5] });
+    const [eqColors, setEqColors] = useState({ eq0: colors[0] });
     const [eqValidity, setEqValidity] = useState({ eq0: false });
 
     const [axisValues, setAxisValues] = useState({
@@ -34,7 +34,6 @@ export default function App(props) {
             ...prevState,
             [eqName]: testEqString(newEq),
         }));
-        setNewColor(eqName);
     }
     function incColorTracker() {
         if (colorTracker === 5) {
@@ -53,7 +52,9 @@ export default function App(props) {
     //let eqCount = 0;
     function addEqRow() {
         //eqCount++;
+        const newEqName = 'eq' + nextEqId;
         handleEqChange('', 'eq' + nextEqId);
+        setNewColor(newEqName);
         setNextEqId(nextEqId + 1);
     }
 
@@ -99,6 +100,7 @@ export default function App(props) {
                     <p>Equations </p>
                     <EqTable
                         eqText={eqText}
+                        eqColors={eqColors}
                         handleEqChange={handleEqChange}
                         eqValidity={eqValidity}
                         addEqRow={addEqRow}
