@@ -115,7 +115,10 @@ hr {
     margin-right: auto;
     margin-left: auto;
 }
-
+.projectLink {
+    margin-top: auto;
+    padding-bottom: 10px;
+}
 input[type='number'] {
     width: 70px;
 }

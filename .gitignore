@@ -24,3 +24,4 @@ yarn-error.log*
 
 .prettierrc.json
 grapher.code-workspace
+update_io.sh

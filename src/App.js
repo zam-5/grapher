@@ -109,6 +109,12 @@ export default function App(props) {
                     />
                     <hr />
                     <div className="axisControls">{axisList}</div>
+                    <a
+                        className="projectLink"
+                        href="https://github.com/zam-5/grapher"
+                    >
+                        See this project on github
+                    </a>
                 </div>
                 <div className="PlotArea">
                     <PlotArea
