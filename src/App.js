@@ -6,15 +6,6 @@ import AxisSelector from './components/AxisSelector';
 import { testEqString } from './util';
 
 export default function App(props) {
-    const colorsObj = {
-        blue: '#2424ff',
-        red: '#c43a31',
-        green: '#008000',
-        orange: '#fa9421',
-        purple: ' #800080 ',
-        black: '#000000',
-    };
-
     const colors = [
         '#2424ff',
         '#c43a31',
@@ -25,14 +16,17 @@ export default function App(props) {
     ];
     const [colorTracker, setColorTracker] = useState(0);
     const [eqText, setEqText] = useState({ eq0: '' });
-    const [eqColors, setEqColors] = useState({ eq0: colorsObj.blue });
+    const [nextEqId, setNextEqId] = useState(1);
+
+    const [eqColors, setEqColors] = useState({ eq0: colors[5] });
+    const [eqValidity, setEqValidity] = useState({ eq0: false });
+
     const [axisValues, setAxisValues] = useState({
         xMin: -10,
         xMax: 10,
         yMin: -10,
         yMax: 10,
     });
-    const [eqValidity, setEqValidity] = useState({ eq0: false });
 
     function handleEqChange(newEq, eqName) {
         setEqText((prevState) => ({ ...prevState, [eqName]: newEq }));
@@ -56,13 +50,11 @@ export default function App(props) {
         }));
     }
 
+    //let eqCount = 0;
     function addEqRow() {
-        let eqCount = 0;
-        for (let eq in eqText) {
-            console.log({ eq });
-            eqCount++;
-        }
-        handleEqChange('', 'eq' + eqCount);
+        //eqCount++;
+        handleEqChange('', 'eq' + nextEqId);
+        setNextEqId(nextEqId + 1);
     }
 
     function deleteEqRow(eqName) {

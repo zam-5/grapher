@@ -3,8 +3,8 @@ import React from 'react';
 export default function NewEqButton(props) {
     function handleClick(e) {
         e.preventDefault();
-        props.addEqRow();
         props.incColorTracker();
+        props.addEqRow();
     }
     return (
         <button
