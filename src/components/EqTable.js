@@ -33,7 +33,10 @@ export default function EqTable(props) {
                     {eqList}
                     <tr key="addButRow">
                         <td>
-                            <NewEqButton addEqRow={props.addEqRow} />
+                            <NewEqButton
+                                addEqRow={props.addEqRow}
+                                incColorTracker={props.incColorTracker}
+                            />
                         </td>
                     </tr>
                 </tbody>

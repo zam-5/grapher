@@ -4,6 +4,7 @@ export default function NewEqButton(props) {
     function handleClick(e) {
         e.preventDefault();
         props.addEqRow();
+        props.incColorTracker();
     }
     return (
         <button

@@ -18,7 +18,7 @@ export default function PlotArea(props) {
             <VictoryLine
                 key={props.eqText[eq] + 'line'}
                 style={{
-                    data: { stroke: '#c43a31' },
+                    data: { stroke: props.eqColors[eq] },
                     parent: { border: '1px solid #ccc' },
                 }}
                 data={data}

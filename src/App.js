@@ -6,8 +6,26 @@ import AxisSelector from './components/AxisSelector';
 import { testEqString } from './util';
 
 export default function App(props) {
-    const [eqText, setEqText] = useState({ eq0: '' });
+    const colorsObj = {
+        blue: '#2424ff',
+        red: '#c43a31',
+        green: '#008000',
+        orange: '#fa9421',
+        purple: ' #800080 ',
+        black: '#000000',
+    };
 
+    const colors = [
+        '#2424ff',
+        '#c43a31',
+        '#008000',
+        '#fa9421',
+        ' #800080 ',
+        '#000000',
+    ];
+    const [colorTracker, setColorTracker] = useState(0);
+    const [eqText, setEqText] = useState({ eq0: '' });
+    const [eqColors, setEqColors] = useState({ eq0: colorsObj.blue });
     const [axisValues, setAxisValues] = useState({
         xMin: -10,
         xMax: 10,
@@ -21,6 +39,20 @@ export default function App(props) {
         setEqValidity((prevState) => ({
             ...prevState,
             [eqName]: testEqString(newEq),
+        }));
+        setNewColor(eqName);
+    }
+    function incColorTracker() {
+        if (colorTracker === 5) {
+            setColorTracker(0);
+        } else {
+            setColorTracker(colorTracker + 1);
+        }
+    }
+    function setNewColor(eqName) {
+        setEqColors((prevState) => ({
+            ...prevState,
+            [eqName]: colors[colorTracker],
         }));
     }
 
@@ -41,6 +73,11 @@ export default function App(props) {
             return state;
         });
         setEqValidity((prevState) => {
+            const state = { ...prevState };
+            delete state[eqName];
+            return state;
+        });
+        setEqColors((prevState) => {
             const state = { ...prevState };
             delete state[eqName];
             return state;
@@ -74,6 +111,7 @@ export default function App(props) {
                         eqValidity={eqValidity}
                         addEqRow={addEqRow}
                         deleteEqRow={deleteEqRow}
+                        incColorTracker={incColorTracker}
                     />
                     <hr />
                     <div className="axisControls">{axisList}</div>
@@ -85,6 +123,7 @@ export default function App(props) {
                             y: [axisValues.yMin, axisValues.yMax],
                         }}
                         eqText={eqText}
+                        eqColors={eqColors}
                         xMin={axisValues.xMin}
                         xMax={axisValues.xMax}
                     />
