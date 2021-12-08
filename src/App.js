@@ -64,7 +64,7 @@ export default function App(props) {
     });
     return (
         <div className="appDiv">
-            <span className="topBar">grapher</span>
+            <div className="topBar">grapher</div>
             <div className="appArea">
                 <div className="sidebar">
                     <p>Equations </p>

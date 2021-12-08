@@ -9,14 +9,16 @@ export default function EqInput(props) {
 
     return (
         <label className="eqBox">
-            f(x)=&nbsp;
-            <input
-                type="text"
-                id={props.id + 'Input'}
-                value={props.eqText}
-                onChange={handleEqChange}
-                className={props.className}
-            />
+            <span style={{ whiteSpace: 'nowrap' }}>
+                f(x)=&nbsp;
+                <input
+                    type="text"
+                    id={props.id + 'Input'}
+                    value={props.eqText}
+                    onChange={handleEqChange}
+                    className={props.className}
+                />
+            </span>
         </label>
     );
 }

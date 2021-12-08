@@ -1,8 +1,10 @@
 import React from 'react';
 import { VictoryChart, VictoryLine, VictoryTheme } from 'victory';
-import { stringToDataPoints } from '../util';
+import { stringToDataPoints, useWindowDimensions } from '../util';
 
 export default function PlotArea(props) {
+    const { height, width } = useWindowDimensions();
+
     let lines = [];
     for (let eq in props.eqText) {
         let data = [];
@@ -33,25 +35,14 @@ export default function PlotArea(props) {
 
     //const lines =
     return (
-        <VictoryChart domain={props.domain} theme={VictoryTheme.material}>
-            {/* <VictoryLine
-                style={{
-                    data: { stroke: '#c43a31' },
-                    parent: { border: '1px solid #ccc' },
-                }}
-                data={data}
-            />
-            <VictoryLine
-                domain={props.domain}
-                style={{
-                    data: { stroke: '#31c43d' },
-                    parent: { border: '1px solid #ccc' },
-                }}
-                data={[
-                    { x: 0, y: 0 },
-                    { x: 10, y: 10 },
-                ]}
-            /> */}
+        <VictoryChart
+            width={width}
+            height={height}
+            padding={{ top: 3, bottom: 3, left: 3, right: 4 }}
+            domain={props.domain}
+            theme={VictoryTheme.material}
+            typ
+        >
             {lines}
         </VictoryChart>
     );

@@ -1,32 +1,40 @@
+html,
+body,
+#root {
+    height: 100%;
+}
 .appDiv {
     display: flex;
     flex-direction: column;
     align-content: center;
+    height: 100%;
+    overflow: hidden;
 }
 .topBar {
-    background-color: darkcyan;
-    border: 5px solid darkcyan;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    background-color: darkslategray;
+    border: 1px solid darkslategray;
+    border-bottom: 1px solid gray;
     margin-top: 0px;
     height: 40px;
-    /* width: 100vw; */
+    width: 100%;
     font-size: 30px;
+    color: whitesmoke;
+    text-decoration: underline;
+    padding-left: 10px;
+    flex-shrink: 0;
 }
 
 .appArea {
     display: flex;
     flex-direction: row;
     text-align: center;
-    /* height: 100%; */
+    margin-bottom: 1px;
 }
 .sidebar {
     display: flex;
     flex-direction: column;
     height: auto;
-    width: 220px;
+    width: auto;
     border-right: 3px solid gray;
     background-color: lightgray;
 }
@@ -64,7 +72,7 @@ hr {
 }
 
 #addButton {
-    color: black;
+    color: darkslategray;
     background-color: transparent;
     border: 1px solid transparent;
     font-weight: bold;
@@ -112,8 +120,7 @@ input[type='number'] {
 }
 
 .PlotArea {
-    width: 75%;
-    /* height: calc(100vh - 80px); */
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
+    flex-shrink: 0;
 }
