@@ -51,10 +51,10 @@ export function testEqString(expr) {
 }
 
 function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
+    const { innerWidth: winWidth, innerHeight: winHeight } = window;
     return {
-        width,
-        height,
+        winWidth,
+        winHeight,
     };
 }
 

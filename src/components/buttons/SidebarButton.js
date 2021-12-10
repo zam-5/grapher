@@ -4,12 +4,12 @@ export default function SidebarButton(props) {
     return (
         <button
             type="button"
-            class="sidebarButton"
+            className="sidebarButton"
             onClick={props.toggleSidebar}
         >
             <div></div>
             <div></div>
-            <div class="bottomBar"> </div>
+            <div className="bottomBar"> </div>
         </button>
     );
 }

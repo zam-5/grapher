@@ -106,26 +106,30 @@ export default function App(props) {
                 <p>grapher</p>
             </div>
             <div className="appArea">
-                <div className="sidebar">
-                    <p>Equations </p>
-                    <EqTable
-                        eqText={eqText}
-                        eqColors={eqColors}
-                        handleEqChange={handleEqChange}
-                        eqValidity={eqValidity}
-                        addEqRow={addEqRow}
-                        deleteEqRow={deleteEqRow}
-                        incColorTracker={incColorTracker}
-                    />
-                    <hr />
-                    <div className="axisControls">{axisList}</div>
-                    <a
-                        className="projectLink"
-                        href="https://github.com/zam-5/grapher"
-                    >
-                        See this project on github
-                    </a>
-                </div>
+                {isSidebarOpen ? (
+                    <div className="sidebar">
+                        <p>Equations </p>
+                        <EqTable
+                            eqText={eqText}
+                            eqColors={eqColors}
+                            handleEqChange={handleEqChange}
+                            eqValidity={eqValidity}
+                            addEqRow={addEqRow}
+                            deleteEqRow={deleteEqRow}
+                            incColorTracker={incColorTracker}
+                        />
+                        <hr />
+                        <div className="axisControls">{axisList}</div>
+                        <a
+                            className="projectLink"
+                            href="https://github.com/zam-5/grapher"
+                        >
+                            See this project on github
+                        </a>
+                    </div>
+                ) : (
+                    <div className="closedSidebar"></div>
+                )}
                 <div className="PlotArea">
                     <PlotArea
                         domain={{
@@ -136,6 +140,7 @@ export default function App(props) {
                         eqColors={eqColors}
                         xMin={axisValues.xMin}
                         xMax={axisValues.xMax}
+                        isSidebarOpen={isSidebarOpen}
                     />
                 </div>
             </div>
