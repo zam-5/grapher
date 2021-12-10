@@ -3,6 +3,7 @@ import './App.css';
 import EqTable from './components/EqTable';
 import PlotArea from './components/PlotArea';
 import AxisSelector from './components/AxisSelector';
+import SidebarButton from './components/buttons/SidebarButton';
 import { testEqString } from './util';
 
 export default function App(props) {
@@ -27,6 +28,8 @@ export default function App(props) {
         yMin: -10,
         yMax: 10,
     });
+
+    const [isSidebarOpen, setSidebarOpen] = useState(true);
 
     function handleEqChange(newEq, eqName) {
         setEqText((prevState) => ({ ...prevState, [eqName]: newEq }));
@@ -94,7 +97,10 @@ export default function App(props) {
     });
     return (
         <div className="appDiv">
-            <div className="topBar">grapher</div>
+            <div className="topBar">
+                <SidebarButton />
+                <p>grapher</p>
+            </div>
             <div className="appArea">
                 <div className="sidebar">
                     <p>Equations </p>
