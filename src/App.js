@@ -84,6 +84,10 @@ export default function App(props) {
         setAxisValues((prevState) => ({ ...prevState, [axis]: newVal }));
     }
 
+    function toggleSidebar() {
+        setSidebarOpen(!isSidebarOpen);
+    }
+
     const axes = ['xMin', 'xMax', 'yMin', 'yMax'];
     const axisList = axes.map((axisName) => {
         return (
@@ -98,7 +102,7 @@ export default function App(props) {
     return (
         <div className="appDiv">
             <div className="topBar">
-                <SidebarButton />
+                <SidebarButton toggleSidebar={toggleSidebar} />
                 <p>grapher</p>
             </div>
             <div className="appArea">
